@@ -25,7 +25,6 @@ app.use(function (req, res, next) {
 });
 
 app.post('/orders', async (req, res) => {
-  console.log('here');
   const { shopName, apiKey, password, startDate, endDate } = req.body;
   const shopify = new Shopify({
     shopName: shopName,
