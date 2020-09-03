@@ -22,10 +22,7 @@ export default () => {
   };
 
   async function getOrders() {
-    const res = await axios.post(
-      'https://shopify-order-export-renderer.herokuapp.com/orders',
-      PostBody,
-    );
+    const res = await axios.post('https://roodkappje.herokuapp.com/orders', PostBody);
     setOrders(res.data);
     setDateChange(false);
   }
@@ -213,12 +210,12 @@ export default () => {
   }
 
   async function getCsvFile(dataArray, name) {
-    const res = await axios.post('https://shopify-order-export-renderer.herokuapp.com/upload', {
+    const res = await axios.post('https://roodkappje.herokuapp.com/upload', {
       dataArray,
       name,
     });
     if (res.data === 'it is ok') {
-      setDownload({ name, url: `https://shopify-order-export-renderer.herokuapp.com/${name}.csv` });
+      setDownload({ name, url: `https://roodkappje.herokuapp.com/${name}.csv` });
     }
   }
 
