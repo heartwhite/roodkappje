@@ -20,11 +20,7 @@ export default () => {
     startDate: startDate,
     endDate: endDate,
   };
-  // React.useEffect(() => {
-  //   localStorage.setItem('shopify-api-password', apiPassword);
-  //   localStorage.setItem('shopify-api-key', apiKey);
-  //   localStorage.setItem('shopify-shop-name', shopName);
-  // }, [apiKey, apiPassword, shopName]);
+
   async function getOrders() {
     const res = await axios.post(
       'https://shopify-order-export-renderer.herokuapp.com/orders',
